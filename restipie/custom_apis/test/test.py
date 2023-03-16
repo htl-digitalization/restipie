@@ -28,6 +28,16 @@ def create_user(*args, **kwargs):
 	except Exception as e:
 		raise e
 
+@request.api("GET", '/v1/api/test')
+def run_test(*args, **kwargs):
+	try:
+		# qs = kwargs.get("query_strings")
+
+			#don't bake the business logic here, put it in the service layer.
+
+		return response.JSONResponse(data=[1,2,3,4])
+	except Exception as e:
+		raise e
 
 @request.api("GET", USERS_PATH)
 def get_all_users(*args, **kwargs):
